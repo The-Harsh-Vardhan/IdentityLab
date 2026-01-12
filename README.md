@@ -1,10 +1,19 @@
-# UIDAI Hackathon - Aadhaar Data Analysis
+# Aadhaar Data Analysis Framework
 
-## Project Overview
-This project analyzes Aadhaar enrolment, demographic update, and biometric update data to uncover meaningful patterns, trends, and actionable insights for UIDAI system improvements.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
 
-## Problem Statement
-[To be defined based on chosen focus area]
+## Overview
+A comprehensive data analysis framework for Aadhaar enrolment and update data, providing tools for exploratory analysis, data preprocessing, statistical modeling, and visualization. This project analyzes ~5 million records across enrolment, demographic updates, and biometric updates to identify patterns, trends, and actionable insights.
+
+## Features
+- 🔄 **Automated Data Loading**: Seamlessly load and combine multiple CSV files
+- 🧹 **Data Preprocessing**: Clean, validate, and transform raw data with built-in quality checks
+- 📊 **Statistical Analysis**: Univariate, bivariate, and multivariate analysis tools
+- 📈 **Advanced Visualizations**: Interactive charts with Plotly, Seaborn, and Matplotlib
+- 🗺️ **Geospatial Analysis**: District and state-level mapping capabilities
+- ⏱️ **Time Series Analysis**: Temporal pattern detection and forecasting
 
 ## Project Structure
 ```
@@ -34,40 +43,121 @@ This project analyzes Aadhaar enrolment, demographic update, and biometric updat
 - pip package manager
 
 ### Installation
-1. Clone this repository
-2. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   ```
-3. Activate the virtual environment:
-   - Windows: `venv\Scripts\activate`
-   - Linux/Mac: `source venv/bin/activate`
-4. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
 
-### Running the Analysis
-1. Start Jupyter Notebook:
-   ```bash
-   jupyter notebook
-   ```
-2. Open notebooks in the `notebooks/` folder sequentially
-3. Run cells to reproduce analysis
+```bash
+# Clone the repository
+git clone https://github.com/Rakshit-2005/uidai-hackathon.git
+cd uidai-hackathon
+
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment
+# Windows:
+.\.venv\Scripts\activate
+# Linux/Mac:
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Register Jupyter kernel (optional)
+python -m ipykernel install --user --name=uidai-analysis --display-name "Aadhaar Analysis"
+```
+
+### Quick Start
+
+```python
+# Load data
+from src.data_loader import AadhaarDataLoader
+
+loader = AadhaarDataLoader('.')
+df_enrolment = loader.load_enrolment_data()
+df_demographic = loader.load_demographic_data()
+df_biometric = loader.load_biometric_data()
+
+# Preprocess
+from src.preprocessing import AadhaarDataPreprocessor
+
+preprocessor = AadhaarDataPreprocessor()
+df_clean = preprocessor.clean_enrolment_data(df_enrolment)
+
+# Analyze
+from src.analysis import AadhaarAnalyzer
+
+analyzer = AadhaarAnalyzer()
+stats = analyzer.univariate_analysis(df_clean, 'total_enrolments')
+staModules
+
+### `data_loader.py`
+- Load and combine multiple CSV files
+- Automatic data type detection
+- Memory-efficient loading with optional Dask support
+
+### `preprocessing.py`
+- Data cleaning and validation
+- Date normalization
+- Outlier detection (IQR and Z-score methods)
+- Feature engineering (temporal features, totals, ratios)
+
+### `analysis.py`
+- Univariate statistics (mean, median, skewness, kurtosis)
+- Bivariate analysis (correlation, statistical tests)
+- Temporal aggregation (daily, weekly, monthly)
+- Geographical aggregation (state, district, pincode)
+- Seasonality detection
+- Growth rate calculation
+
+### `visualization.py`
+- Interactive time series plots
+- Distribution analysis (histograms, box plots)
+- Top N bar charts
+- Correlation heatmaps
+- Geospatial choropleth maps
+- Seasonal pattern visualization
+viz = AadhaarVisualizer(output_dir="outputs")
+fig = viz.plot_time_series(df_clean, 'date', 'total_enrolments', 'Enrolments Over Time')
+```
+
+### Running Notebooks
+```bash
+# Start Jupyter
+jupyter notebook
+
+# Open notebooks in sequence:
+# 1. notebooks/01_data_exploration.ipynb
+# 2. notebooks/02_data_cleaning.ipynb
+# 3. notebooks/03_analysis.ipynb
+# 4. notebooks/04_visualization.ipynb
+```
 
 ## Data Description
 
 ### Enrolment Data (~1M records)
 - New Aadhaar registrations by date, location, and age group
-- Fields: date, state, district, pincode, age_0_5, age_5_17, age_18_greater
+- FContributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Demographic Update Data (~2M records)
-- Demographic information updates (address, name, DOB changes)
-- Fields: date, state, district, pincode, demo_age_5_17, demo_age_17_
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Biometric Update Data (~1.8M records)
-- Biometric data updates (fingerprint, iris, photo)
-- Fields: date, state, district, pincode, bio_age_5_17, bio_age_17_
+## Author
+**Rakshit Modanwal**
+- GitHub: [@Rakshit-2005](https://github.com/Rakshit-2005)
+
+## Acknowledgments
+- UIDAI for providing the hackathon opportunity and datasets
+- Open-source community for the amazing data science tools
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Note**: This project was developed for the UIDAI Hackathon 2026. The datasets used are for educational and analytical purposes.strict, pincode, bio_age_5_17, bio_age_17_
 
 ## Key Findings
 [To be populated after analysis]
@@ -83,7 +173,8 @@ This project analyzes Aadhaar enrolment, demographic update, and biometric updat
 - **Geospatial**: GeoPandas
 
 ## Team Members
-[Add your team information]
+Rakshit Modanwal
+Github : https://github.com/Rakshit-2005
 
 ## License
 This project is created for the UIDAI Hackathon 2026.

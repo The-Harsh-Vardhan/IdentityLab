@@ -57,3 +57,6 @@ outputs/
 
 # Cache
 .cache/
+
+# Extras folder (internal notes and hackathon-specific files)
+Extras/
