@@ -1,11 +1,14 @@
-# Aadhaar Data Analysis Framework
+# IdentityLab
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
+[![Hackathon](https://img.shields.io/badge/UIDAI-Hackathon%202026-orange.svg)](https://uidai.gov.in/)
+
+> *Research-grade analytics for India's digital identity ecosystem*
 
 ## Overview
-A comprehensive data analysis framework for Aadhaar enrolment and update data, providing tools for exploratory analysis, data preprocessing, statistical modeling, and visualization. This project analyzes ~5 million records across enrolment, demographic updates, and biometric updates to identify patterns, trends, and actionable insights.
+IdentityLab is a comprehensive data analysis platform for UIDAI Aadhaar enrollment, demographic, and biometric data. Built to uncover actionable insights in identity access and adoption patterns, this platform analyzes ~5 million records to identify trends, detect anomalies, and support evidence-based policy decisions.
 
 ## Features
 - 🔄 **Automated Data Loading**: Seamlessly load and combine multiple CSV files
@@ -46,8 +49,8 @@ A comprehensive data analysis framework for Aadhaar enrolment and update data, p
 
 ```bash
 # Clone the repository
-git clone https://github.com/Rakshit-2005/uidai-hackathon.git
-cd uidai-hackathon
+git clone https://github.com/Rakshit-2005/IdentityLab.git
+cd IdentityLab
 
 # Create virtual environment
 python -m venv .venv
@@ -62,7 +65,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 # Register Jupyter kernel (optional)
-python -m ipykernel install --user --name=uidai-analysis --display-name "Aadhaar Analysis"
+python -m ipykernel install --user --name=identity-lab --display-name "IdentityLab"
 ```
 
 ### Quick Start
