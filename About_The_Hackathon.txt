@@ -1,0 +1,166 @@
+We welcome you to participate in the Online Hackathon on data-driven innovation for Aadhaar, organised by the Unique Identification Authority of India (UIDAI) in association with National Informatics Centre (NIC), Ministry of Electronics and Information Technology (MeitY).
+
+UIDAI has made anonymised datasets of Aadhaar enrolment and updates, available to the participating teams to identify meaningful patterns, trends, anomalies, or predictive indicators and translate them into clear insights or solution frameworks that can support informed decision-making and system improvements.
+
+PARTICIPATION
+
+This contest is open to any student enrolled in any accredited Indian university/Institution.
+Participant(s) must be at least 18 years of age on 1st Jan 2026.
+Participants can participate individually or form teams – ideally heterogeneous, consisting of people with different skill sets – up to a maximum of five members, including the Team Lead.
+The team lead must submit his/her student ID card along with those of the team members during project submission.
+People associated with service delivery at UIDAI and NIC are not allowed to participate in this Hackathon.
+
+STRUCTURE OF THE HACKATHON
+
+Event will be conducted online.
+There would be a time of 15 days from the launch of the Hackathon to register and submit an idea.
+Interested candidates would access the event registration and submission links at challenge page.
+Shortlisted teams will be invited to make presentations before UIDAI officials and the Jury Panel. An award ceremony will be organized by UIDAI in either Delhi or Bengaluru (venue to be notified in due course). UIDAI will reimburse the travel expenses incurred by the shortlisted teams.
+
+Problem Statement: Unlocking Societal Trends in Aadhaar Enrolment and Updates
+
+Identify meaningful patterns, trends, anomalies, or predictive indicators and translate them into clear insights or solution frameworks that can support informed decision-making and system improvements.
+
+Participants must submit one consolidated PDF containing the following sections:
+
+Problem Statement and Approach: A concise description of the problem being addressed and the proposed analytical or technical approach.
+Datasets Used: A clear description of the dataset(s) and columns used for the analysis. Participants must use the Aadhaar enrolment and/or update dataset provided by UIDAI.
+Methodology: A detailed explanation of the methodology adopted, including data cleaning, preprocessing, and any transformations applied before analysis.
+Data Analysis and Visualisation: A description of key findings and insights, and the visualisations or infographics developed. Participants must also include code files or notebooks used for the analysis (in the PDF itself).
+Note: Shortlisted teams may be asked to submit the code file/notebook separately on GitHub.
+
+These terms and conditions govern the Online hackathon on data-driven innovation on Aadhaar- 2026. By participating in the hackathon, one is deemed to have accepted the terms and conditions mentioned below, as well as the terms of use of the OGD Platform India.
+
+GENERAL TERMS & CONDITIONS
+
+Please read these Terms and Conditions carefully as they apply to the Hackathon. To be eligible to participate and declare as shortlisted or winners in the Hackathon, the participants must accept these Terms and Conditions:
+
+Participants must not provide any false information in the registration and team creation process.
+Participants must keep their contact information accurate and up-to-date.
+Only a single MyGov/Janparichay/OGD account is permitted for an individual or a team. If more than one account exists for the same candidate, then it will automatically result in the disqualification of the candidate.
+As a part of the submission, the contestant certifies the originality and ownership of the solution as detailed/described in the documentation uploaded at the time of submission.
+The participant(s) must ensure that his/her/their work has not been previously published or awarded.
+The participants will not use this contest to do anything unlawful, misleading, malicious, or discriminatory.
+The winning submissions must be maintained in working condition by the contestant(s) for a period of one year. No functional enhancements are expected, but all bugs identified according to the description in the documentation should be fixed immediately on reporting.
+If any participant is determined to have violated the terms of the contest, UIDAI have all rights to disqualify the participant without prior notice.
+If the Applications shortlisted do not meet the expectations of the Jury, Jury has the discretion and the right, not to confer an award in one or more categories/ subcategories.
+The Jury’s decision shall be final and cannot be challenged.
+UIDAI reserves the right to change the terms and conditions, if required.
+The organizers reserve the right in their sole discretion to withdraw participation of any individual/team from the event or reject any submission at any point of time during the process.
+
+All applications will be rated on the parameters listed below:
+
+Data Analysis & Insights:
+Depth, accuracy, and relevance of univariate/bivariate/trivariate analysis
+Ability to extract meaningful findings from the data
+Creativity & Originality:
+Uniqueness of the problem statement or solution, innovative use of datasets
+Technical Implementation:
+Code quality, reproducibility, and rigour of approach, appropriate methods, tooling, and documentation
+Visualisation & Presentation:
+Clarity and effectiveness of data visualisations, Quality of written report or slides
+Impact & Applicability:
+Potential for social/administrative benefit, Practicality and feasibility of insights/solutions
+
+What is the purpose of this Hackathon?
+The purpose of this Hackathon is to identify meaningful patterns, trends, anomalies, or predictive indicators and translate them into clear insights or solution frameworks that can support informed decision-making and system improvements.
+
+Who can participate in the Hackathon?
+Any student or researcher enrolled in any accredited Indian university/Institution.
+
+Can participants form teams?
+Yes, participants are permitted to form teams comprising up to five members.
+
+Can a participant be part of multiple teams?
+No, a participant is allowed to register as a member of only one team.
+
+Are employees of UIDAI and NIC eligible to participate?
+No, the employees of UIDAI may not participate in the Hackathon.
+
+How can one register for the Hackathon?
+Please visit the official event page on https://event.data.gov.in
+
+Are participants required to register on any specific platform?
+Yes, all participants must register on JanParichay: https://janparichay.meripehchaan.gov.in/v1/pehchaan/createprofile.html
+
+What are the Problem Statements for the Hackathon?
+Please read the detailed Problem Statement on the official event page on https://event.data.gov.in
+
+How will the Hackathon be organised? Will it require in-person participation?
+The Hackathon will be organised as an online event with process for registration of participants, accessing the datasets to be utilised for Problem Statement, and submission of insights. Only the shortlisted team will be invited for an in-person presentation.
+
+What is the timeline for the Hackathon?
+The Hackathon will take place during a total of 15 days from the start of registration of participants to the final date for submission of insights.
+
+What data will be provided to participants?
+Aadhaar-related aggregated/anonymised datasets.
+Enrolment Data
+Demographic Update Data
+Biometric Update Data
+All datasets allow for univariate, bivariate, and trivariate analyses.
+What needs to be submitted for evaluation?
+One consolidated PDF, the details can be found in the project submission section.
+
+Will there be any jury for evaluation?
+Yes.
+
+What are the rewards for selected entries?
+Top 5 most innovative submissions will be awarded the following prizes:
+
+1st prize: 2,00,000 with certificate
+2nd prize: 1,50,000 with certificate
+3rd prize: 75,000 with certificate
+4th prize: 50,000 with certificate
+5th prize: 25,000 with certificate
+What is the evaluation criteria?
+All applications will be rated on the parameters listed below:
+Data Analysis & Insights:
+Depth, accuracy, and relevance of univariate/bivariate/trivariate analysis
+Ability to extract meaningful findings from the data
+Creativity & Originality:
+Uniqueness of the problem statement or solution, innovative use of datasets
+Technical Implementation:
+Code quality, reproducibility, and rigour of approach, appropriate methods, tooling, and documentation
+Visualisation & Presentation:
+Clarity and effectiveness of data visualisations, Quality of written report or slides
+Impact & Applicability:
+Potential for social/administrative benefit, Practicality and feasibility of insights/solutions
+Are there any guidelines for technology usage?
+Yes, the participants may only submit original materials under:
+
+Allowed Tools: Any programming language, analytics library, or visualization tool may be used (e.g., Python, R, SQL, Excel, Tableau, Power BI, etc.).
+Open Source Encouraged: Use of open-source packages and frameworks is recommended.
+Dataset: Use of any of the Aadhaar enrolment and update datasets is mandatory.
+Can participants use any technology?
+The participants are encouraged to implement the latest emerging technologies like AI, ML, etc.
+
+What happens if a participant provides false information?
+A participant providing false information during the registration process or later in the Hackathon shall be disqualified.
+
+Must participants keep their contact information updated?
+Yes, it is mandatory for the participants to provide correct contact information and update the same if and when applicable.
+
+Can participants have multiple accounts on the submission platforms?
+No, only a single account may be created by each participant registering for the Hackathon. Similarly, a team may create only a single account for the same.
+
+Is originality of the application important?
+Yes, the participants must certify the originality of their work before submitting the same for evaluation.
+
+Can participants submit previously published or awarded work?
+No, the submitted prototypes must be produced originally for this Hackathon.
+
+Are there any restrictions on the code submitted?
+The code to be submitted must be free from malware including adware, ransomware, spyware, virus, worm, etc.
+
+What legal terms must participants follow?
+The participants must follow the Terms and Conditions of the Hackathon.
+
+What is the jury’s role in decision making?
+The jury shall have the final decision with respect to awarding of the most innovative insights submitted and the same cannot be challenged.
+
+Can the Terms and Conditions of the Hackathon change?
+Yes, the UIDAI may change the Terms and Conditions of the Hackathon as per its requirement.
+
+For all queries related to UIDAI Data Hackathon, please contact:
+
+To: sitaa-support@uidai.net.in and CC: ndsap@gov.in
