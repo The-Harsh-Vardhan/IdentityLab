@@ -7,16 +7,45 @@
 
 > *Research-grade analytics for India's digital identity ecosystem*
 
-## Overview
-IdentityLab is a comprehensive data analysis platform for UIDAI Aadhaar enrollment, demographic, and biometric data. Built to uncover actionable insights in identity access and adoption patterns, this platform analyzes ~5 million records to identify trends, detect anomalies, and support evidence-based policy decisions.
+IdentityLab is a data analysis pipeline for the UIDAI Aadhaar enrolment, demographic-update and biometric-update datasets (~5 million raw records). It cleans the data, runs statistical and geographic analysis, and produces interactive Plotly charts, to surface access and adoption patterns that can support evidence-based policy decisions. Built for the UIDAI Hackathon 2026.
 
-## Features
-- 🔄 **Automated Data Loading**: Seamlessly load and combine multiple CSV files
-- 🧹 **Data Preprocessing**: Clean, validate, and transform raw data with built-in quality checks
-- 📊 **Statistical Analysis**: Univariate, bivariate, and multivariate analysis tools
-- 📈 **Advanced Visualizations**: Interactive charts with Plotly, Seaborn, and Matplotlib
-- 🗺️ **Geospatial Analysis**: District and state-level mapping capabilities
-- ⏱️ **Time Series Analysis**: Temporal pattern detection and forecasting
+**Privacy note:** the datasets are published aggregate counts per date, state, district and pincode. They contain no names, Aadhaar numbers or other personal records, and this repository adds none.
+
+Docs: https://the-harsh-vardhan.github.io/IdentityLab/
+
+## What it does
+- **Automated data loading**: combine multiple CSV files per dataset, with optional Dask support
+- **Preprocessing**: clean, validate and transform raw data with built-in quality checks and outlier detection
+- **Statistical analysis**: univariate, bivariate and temporal analysis, seasonality detection, Gini concentration
+- **Visualization**: interactive charts with Plotly, Seaborn and Matplotlib, including a multi-panel dashboard
+- **Geographic analysis**: state, district and pincode level aggregation and choropleth mapping
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A[("Dataset/ CSVs<br/>enrolment, demographic, biometric")] -->|"read and concat"| B["AadhaarDataLoader<br/>src/data_loader.py"]
+    B -->|"raw DataFrames"| C["AadhaarDataPreprocessor<br/>src/preprocessing.py"]
+    C -->|"dedupe, dates, features, outlier flags"| D["Clean DataFrames"]
+    D -->|"aggregations, tests"| E["AadhaarAnalyzer<br/>src/analysis.py"]
+    E -->|"stats and insights"| F["AadhaarVisualizer<br/>src/visualization.py"]
+    D --> F
+    F -->|"HTML charts"| G[/"outputs/"/]
+    H["notebooks 01-04"] -.->|"drive each stage"| B
+```
+
+## Key results
+Figures come from the project notebooks and are detailed in [Key Findings](#key-findings).
+
+| Metric | Value |
+|---|---|
+| Records analysed after cleaning | ~4.35 million |
+| Duplicates removed | 591,180 (11.9% of raw data) |
+| Date range | March 2025 - December 2025 |
+| Geographic coverage | 50+ states/UTs, 950+ districts |
+| Update-to-enrolment ratio | ~20:1 |
+| Geographic concentration (Gini) | 0.74-0.77 |
+| Interactive charts generated | 22 HTML files |
 
 ## Project Structure
 ```
@@ -34,7 +63,7 @@ IdentityLab is a comprehensive data analysis platform for UIDAI Aadhaar enrollme
 │   ├── preprocessing.py
 │   ├── analysis.py
 │   └── visualization.py
-├── outputs/                          # Generated visualizations and reports
+├── outputs/                          # Generated visualizations and reports (created on run)
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # This file
 ```
@@ -49,7 +78,7 @@ IdentityLab is a comprehensive data analysis platform for UIDAI Aadhaar enrollme
 
 ```bash
 # Clone the repository
-git clone https://github.com/Rakshit-2005/IdentityLab.git
+git clone https://github.com/The-Harsh-Vardhan/IdentityLab.git
 cd IdentityLab
 
 # Create virtual environment
@@ -90,7 +119,27 @@ from src.analysis import AadhaarAnalyzer
 
 analyzer = AadhaarAnalyzer()
 stats = analyzer.univariate_analysis(df_clean, 'total_enrolments')
-staModules
+
+# Visualize
+from src.visualization import AadhaarVisualizer
+
+viz = AadhaarVisualizer(output_dir="outputs")
+fig = viz.plot_time_series(df_clean, 'date', 'total_enrolments', 'Enrolments Over Time')
+```
+
+### Running Notebooks
+```bash
+# Start Jupyter
+jupyter notebook
+
+# Open notebooks in sequence:
+# 1. notebooks/01_data_exploration.ipynb
+# 2. notebooks/02_data_cleaning.ipynb
+# 3. notebooks/03_analysis.ipynb
+# 4. notebooks/04_visualization.ipynb
+```
+
+## Modules
 
 ### `data_loader.py`
 - Load and combine multiple CSV files
@@ -118,45 +167,21 @@ staModules
 - Correlation heatmaps
 - Geospatial choropleth maps
 - Seasonal pattern visualization
-viz = AadhaarVisualizer(output_dir="outputs")
-fig = viz.plot_time_series(df_clean, 'date', 'total_enrolments', 'Enrolments Over Time')
-```
-
-### Running Notebooks
-```bash
-# Start Jupyter
-jupyter notebook
-
-# Open notebooks in sequence:
-# 1. notebooks/01_data_exploration.ipynb
-# 2. notebooks/02_data_cleaning.ipynb
-# 3. notebooks/03_analysis.ipynb
-# 4. notebooks/04_visualization.ipynb
-```
 
 ## Data Description
+Each dataset is a set of CSV files with aggregate counts keyed by `date`, `state`, `district` and `pincode`.
 
 ### Enrolment Data (~1M records)
-- New Aadhaar registrations by date, location, and age group
-- FContributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+- New Aadhaar registrations by date, location and age group
+- Columns: `date`, `state`, `district`, `pincode`, `age_0_5`, `age_5_17`, `age_18_greater`
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### Demographic Update Data
+- Demographic updates by date, location and age group
+- Columns: `date`, `state`, `district`, `pincode`, `demo_age_5_17`, `demo_age_17_`
 
-## Acknowledgments
-- UIDAI for providing the hackathon opportunity and datasets
-- Open-source community for the amazing data science tools
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-**Note**: This project was developed for the UIDAI Hackathon 2026. The datasets used are for educational and analytical purposes.strict, pincode, bio_age_5_17, bio_age_17_
+### Biometric Update Data
+- Biometric updates by date, location and age group
+- Columns: `date`, `state`, `district`, `pincode`, `bio_age_5_17`, `bio_age_17_`
 
 ## Key Findings
 
@@ -321,8 +346,24 @@ Github : https://github.com/The-Harsh-Vardhan
 Rakshit Modanwal
 Github : https://github.com/Rakshit-2005
 
-## License
-This project is created for the UIDAI Hackathon 2026.
 
-## Contact
-[Add contact information]
+
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## Acknowledgments
+- UIDAI for providing the hackathon opportunity and datasets
+- Open-source community for the amazing data science tools
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Note**: This project was developed for the UIDAI Hackathon 2026. The datasets used are for educational and analytical purposes.
